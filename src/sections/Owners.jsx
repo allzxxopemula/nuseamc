@@ -2,18 +2,18 @@ import React from 'react';
 import '../css/Owners.css';
 
 const Owners = () => {
-  const ownerData = [
-    {
-      name: "Fariz",
-      role: "FOUNDER & SERVER OWNER",
-      img: "https://mc-heads.net/avatar/.LAxRizz/180", 
-      desc: "Fariz is the heart and vision behind Nusantara Aether. What started as a simple hobby quickly grew into a thriving community. His goal was never to build the biggest server, but the most genuine — a place where fairness, fun, and friendship come first."
-    },
+const ownerData = [
     {
       name: "Azdaiz",
-      role: "CO-OWNER & COMMUNITY MANAGER",
+      role: "SERVER OWNER",
       img: "https://mc-heads.net/avatar/Azdaiz/180",
-      desc: "Every strong community needs a caring guide, and that's where Azdaiz shines. As Co-Owner, he helps new players feel at home, keeps the staff team organized, and ensures the server is always a safe, welcoming space for everyone."
+      desc: "As the Owner of Nusantara Aether, Azdaiz is the primary force behind the server's growth. He ensures everything runs smoothly, manages the big picture, and makes sure every player has the best experience possible in the world of Aether."
+    },
+    {
+      name: "Fariz",
+      role: "FOUNDER & CO-OWNER",
+      img: "https://mc-heads.net/avatar/.LAxRizz/180", 
+      desc: "Fariz is the original visionary and Founder of the community. Now serving as Co-Owner, he continues to guide the server's heart and soul, ensuring that the initial vision of fairness and friendship remains at the core of Nusantara Aether."
     }
   ];
 
