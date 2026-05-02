@@ -4,8 +4,8 @@ import TeamBanner from '../assets/team.png';
 
 const Team = () => {
   const teamMembers = [
-    { name: "Fariz", role: "Owner", color: "#ff4d4d", skin: "https://mc-heads.net/avatar/MHF_Steve/64" },
-    { name: "Azdaiz", role: "Co-Owner", color: "#ff4d4d", skin: "https://mc-heads.net/avatar/MHF_Alex/64" },
+    { name: "Fariz", role: "CO-Owner", color: "#ff4d4d", skin: "https://mc-heads.net/avatar/MHF_Steve/64" },
+    { name: "Azdaiz", role: "Owner", color: "#ff4d4d", skin: "https://mc-heads.net/avatar/MHF_Alex/64" },
     { name: "Evin", role: "Admin", color: "#ffb800", skin: "https://mc-heads.net/avatar/MHF_Villager/64" },
     { name: "Galng", role: "Admin", color: "#ffb800", skin: "https://mc-heads.net/avatar/MHF_OakLog/64" },
     { name: "Alfian", role: "Mod", color: "#00569c", skin: "https://mc-heads.net/avatar/MHF_Enderman/64" },
