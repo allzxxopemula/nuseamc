@@ -1,0 +1,257 @@
+/* --- SECTION WRAPPER --- */
+.stats-section {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.stats-container {
+  width: 92%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- HEADER & BADGE --- */
+.stats-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+}
+
+.status-badge.online { color: #16a34a; background: #f0fdf4; border-color: #dcfce7; }
+.status-badge.offline { color: #dc2626; background: #fef2f2; border-color: #fee2e2; }
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: stat-pulse 1.5s infinite;
+}
+
+@keyframes stat-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- GRID SYSTEM --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* --- CARD DESIGN --- */
+.stat-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #f2f2f2;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: 110px; 
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.stat-icon-wrapper {
+  width: 54px;
+  height: 54px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #000000;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  color: #999;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #111;
+  line-height: 1.2;
+}
+
+/* --- HOVER EFFECTS --- */
+.stat-card:hover {
+  border-color: #ff0000;
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(255, 0, 0, 0.08);
+}
+
+.stat-card:hover .stat-icon-wrapper {
+  background: #ff0000;
+  color: #ffffff;
+  transform: rotate(-10deg) scale(1.1);
+}
+
+/* --- EXPLORERS / HEADS UI --- */
+.heads-mini-grid {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.head-mini {
+  width: 30px;
+  height: 30px;
+  margin-left: -10px;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #eee;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.head-mini:first-child { margin-left: 0; }
+
+.head-mini img {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  object-fit: cover;
+}
+
+.head-mini:hover {
+  transform: translateY(-5px) scale(1.2);
+  z-index: 10;
+  border-color: #ff0000;
+}
+
+.shuffle-animation {
+  animation: fadeShuffle 0.6s ease-in-out;
+}
+
+@keyframes fadeShuffle {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.no-play {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ccc;
+}
+
+/* --- RESPONSIVE KHUSUS HP (1 BARIS 1 CARD - STACKED) --- */
+@media screen and (max-width: 600px) {
+  .stats-section {
+    padding: 30px 0;
+  }
+
+  /* Grid jadi 1 kolom saja biar lega */
+  .stats-grid {
+    grid-template-columns: 1fr; 
+    gap: 12px; /* Jarak antar baris card */
+    padding: 0 5px;
+  }
+
+  /* Semua card (termasuk yang players) ukurannya sama rata */
+  .stat-card, 
+  .explorers-card {
+    grid-column: span 1 !important; 
+    flex-direction: row !important; /* Icon kiri, teks kanan */
+    justify-content: flex-start !important;
+    align-items: center !important;
+    text-align: left !important;
+    padding: 15px 20px;
+    height: 75px !important; /* Tinggi card lebih proporsional */
+    border-radius: 15px;
+    gap: 15px;
+  }
+
+  /* Info wrapper biar gak center lagi, tapi lurus ke kiri samping icon */
+  .stat-info {
+    width: auto;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  /* Ukuran Icon di HP dibuat pas (gak kegedean/kekecilan) */
+  .stat-icon-wrapper {
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    margin-bottom: 0; /* Hilangkan margin bawah karena sekarang sampingan */
+  }
+
+  /* Font Label (Kecil & Bold) */
+  .stat-label {
+    font-size: 0.65rem;
+    margin-bottom: 2px;
+    width: auto;
+  }
+
+  /* Font Angka (Ukuran Sedang biar elegan) */
+  .stat-value {
+    font-size: 1.4rem;
+    font-weight: 900;
+    width: auto;
+    display: block;
+  }
+
+  /* Styling Khusus Grid Kepala Skin di baris ke-4 */
+  .heads-mini-grid {
+    width: auto;
+    justify-content: flex-start !important;
+    margin-top: 2px;
+  }
+
+  .head-mini {
+    width: 28px;
+    height: 28px;
+    margin-left: -8px;
+    border-width: 1.5px;
+  }
+
+  .status-badge {
+    padding: 8px 16px;
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+  }
+}
+
+/* Fix untuk HP layar sangat kecil */
+@media screen and (max-width: 350px) {
+  .stat-card {
+    padding: 10px 15px;
+    height: 65px !important;
+  }
+  .stat-value {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,225 @@
+.footer-section {
+  background-color: #0a0a0a; /* Hitam pekat agar kontras sama section atas */
+  padding: 80px 0 30px 0;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+/* Kolom Brand */
+.footer-logo {
+  width: 150px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.2));
+}
+
+.footer-about {
+  color: #888;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Kolom Title */
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  position: relative;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 30px;
+  height: 2px;
+  background-color: #ff0000; /* Aksen merah lu Bang */
+}
+
+/* Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #ff0000;
+  padding-left: 5px;
+}
+
+/* Play Now Status */
+.footer-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00ff00; /* Ijo status online */
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff00;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.footer-status p {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.footer-support {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Bottom Copyright */
+.footer-divider {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 30px;
+}
+
+.footer-copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #555;
+  font-size: 0.8rem;
+}
+
+.footer-copyright span {
+  color: #888;
+  font-weight: 700;
+}
+
+.dev-credit {
+  font-style: italic;
+}
+
+/* =========================================
+   MEDIA QUERY HP (RESPONSIVE)
+   ========================================= */
+@media screen and (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr; /* 2 kolom di tablet */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-section {
+    padding: 40px 0 20px 0;
+  }
+
+  .footer-grid {
+    /* Tetap bagi 2 kolom biar nggak numpuk ke bawah */
+    grid-template-columns: 1fr 1fr; 
+    gap: 25px 15px; /* Jarak antar kolom lebih rapat */
+    text-align: left; /* Tetap rata kiri biar rapi */
+  }
+
+  /* Kolom Brand (Logo & About) dibuat Full Width biar nggak sempit */
+  .footer-column.brand-info {
+    grid-column: span 2; 
+    margin-bottom: 10px;
+  }
+
+  .footer-logo {
+    width: 120px; /* Logo dikecilkan dikit */
+    margin-bottom: 15px;
+  }
+
+  .footer-about {
+    font-size: 0.8rem;
+    max-width: 100%;
+  }
+
+  .footer-title {
+    font-size: 0.95rem; /* Judul kolom dikecilkan */
+    margin-bottom: 15px;
+  }
+
+  .footer-title::after {
+    bottom: -5px;
+    width: 20px;
+  }
+
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+  }
+
+  /* Kolom Play Now dibuat Full Width di paling bawah footer grid */
+  .footer-column:last-child {
+    grid-column: span 2;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .footer-status {
+    background: transparent;
+    padding: 0;
+    border: none;
+    margin-bottom: 5px;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+  }
+
+  .footer-copyright {
+    flex-direction: row; /* Biar tetap sejajar kiri-kanan di HP jika muat */
+    justify-content: space-between;
+    font-size: 0.7rem;
+    gap: 5px;
+  }
+
+  .dev-credit {
+    display: none; /* Sembunyikan credit dev di HP biar gak penuh */
+  }
+}

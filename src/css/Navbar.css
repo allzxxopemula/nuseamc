@@ -1,0 +1,182 @@
+/* Section untuk nahan posisi absolute/fixed */
+.navbar-section {
+  position: fixed;
+  top: 15px; 
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+/* Container di dalam section buat styling floating navbar-nya */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(15, 15, 15, 0.5); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50px; 
+  padding: 0 20px; 
+  height: 55px; 
+  position: relative; /* Penting buat patokan dropdown menu di HP */
+  margin: 0 auto;
+  width: 80%;
+}
+
+/* Logo Image */
+.nav-brand {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo-font {
+  height: 28px; 
+  object-fit: contain;
+}
+
+/* Menu Links (Desktop) */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 25px; 
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #d1d1d1;
+  font-size: 13px; 
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #ff3333; 
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+}
+
+/* Tombol Kanan (Play with us) */
+.btn-play-with-us {
+  /* Penting: biar padding & transform jalan di tag <a> */
+  display: inline-block; 
+  text-decoration: none;
+  
+  background: linear-gradient(135deg, #e52d27, #b31217);
+  color: #ffffff !important; /* !important biar gak ketimpa warna link default */
+  border: none;
+  padding: 8px 18px; 
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 12px; 
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(229, 45, 39, 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-play-with-us:hover {
+  background: linear-gradient(135deg, #ff0000, #d31027);
+  transform: translateY(-2px) scale(1.05); /* Sedikit lebih naik biar kerasa interaksinya */
+  box-shadow: 0 6px 15px rgba(255, 0, 0, 0.4);
+  color: #ffffff !important;
+}
+
+/* Biar pas diklik gak ada garis fokus yang ganggu */
+.btn-play-with-us:focus {
+  outline: none;
+}
+
+
+
+/* Hamburger Icon (Hidden on Desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 15px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Animasi Burger jadi tanda Silang (X) pas diklik */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+
+/* --- RESPONSIVE MOBILE --- */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    width: 92%; 
+    height: 50px; /* Dibuat lebih ramping di HP */
+    padding: 0 15px; /* Padding dikurangi */
+  }
+
+  .nav-logo-font {
+    height: 22px; /* Logo lebih kecil di HP */
+  }
+
+  /* Hilangkan tombol Play With Us, Tampilkan Burger */
+  .btn-play-with-us {
+    display: none; 
+  }
+
+  .hamburger {
+    display: flex; 
+  }
+
+  /* Styling Menu Dropdown Mobile */
+  .nav-menu {
+    position: absolute;
+    top: 60px; /* Jarak dropdown dari navbar */
+    left: 0;
+    right: 0;
+    background: rgba(15, 15, 15, 0.9); /* Background gelap transparan */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 20px;
+    
+    /* Animasi buka tutup */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: all 0.3s ease;
+  }
+
+  /* Kalau tombol burger diklik, menu muncul */
+  .nav-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .nav-menu a {
+    font-size: 15px; /* Font menu dropdown diperbesar sedikit biar gampang dipencet */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}

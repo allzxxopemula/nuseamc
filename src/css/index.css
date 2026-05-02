@@ -1,0 +1,48 @@
+/* IMPORT FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sembunyikan Scrollbar (Semua Browser) */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body {
+  /* Ganti di sini kalau mau coba font lain (Outfit / Sora) */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #ffffff;
+  color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; /* Biar font lebih tajam di Mac/iOS */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Opsional: Bikin Heading pake font yang lebih bold */
+h1, h2, h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+
+
+
+/* Button Global Style */
+button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}

@@ -1,0 +1,144 @@
+.team-section {
+  width: 100%;
+  padding: 50px 0;
+  background-color: #f4f4f4;
+  color: #000000;
+  overflow: hidden;
+}
+
+.team-container {
+  width: 100%;
+}
+
+.team-badge {
+  color: #ff0000;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: rgba(255, 0, 0, 0.05);
+  padding: 6px 15px;
+  border-radius: 50px;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 25px;
+  padding: 0 15px;
+}
+
+.team-banner-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.team-banner-img {
+  width: 100%;
+  max-width: 900px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.team-title {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.team-title span { color: #ff0000; }
+
+.team-subtitle {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* MARQUEE - SPEED 20s & NO GAP */
+.team-marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 30px 0;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.team-marquee-content {
+  display: flex;
+  width: max-content;
+  gap: 15px; /* Jarak antar kotak kecil */
+  animation: scrollMarquee 20s linear infinite; /* Kecepatan 20 detik */
+}
+
+.team-marquee-content:hover {
+  animation-play-state: paused; /* Berhenti pas di hover */
+}
+
+@keyframes scrollMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% / 3)); }
+}
+
+/* CARD DESIGN - KECIL & CLEAN */
+.team-card {
+  flex: 0 0 140px; /* Lebar kotak dikecilkan */
+  background: #ffffff;
+  padding: 15px 10px;
+  border-radius: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.team-card:hover {
+  transform: scale(1.1); /* Zoom dikit aja biar tetep clean */
+  border-color: #ff0000;
+  z-index: 5;
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.08);
+}
+
+.member-head {
+  width: 45px; /* Kepala kecil proporsional */
+  height: 45px;
+}
+
+.member-head img {
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+.member-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.member-role-badge {
+  font-size: 8px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* RESPONSIVE HP */
+@media screen and (max-width: 480px) {
+  .team-card { flex: 0 0 120px; }
+  .member-head { width: 40px; height: 40px; }
+  .member-name { font-size: 0.8rem; }
+  .team-banner-img { height: 140px; }
+}

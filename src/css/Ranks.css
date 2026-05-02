@@ -1,0 +1,169 @@
+.ranks-section {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #ffffff;
+  color: #000000;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.ranks-container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ranks-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.rank-badge {
+  color: #ff0000;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: rgba(255, 0, 0, 0.05);
+  padding: 6px 15px;
+  border-radius: 50px;
+}
+
+.ranks-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-top: 20px;
+}
+
+.ranks-title span {
+  color: #ff0000;
+}
+
+.ranks-subtitle {
+  max-width: 600px;
+  margin: 10px auto 0;
+  color: #666666;
+  font-size: 0.9rem;
+}
+
+.ranks-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+.rank-card {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 20px;
+  padding: 25px 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.rank-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--rank-clr);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.rank-icon-box {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fcfcfc;
+  border-radius: 50%;
+}
+
+.rank-icon-box img {
+  width: 40px;
+  image-rendering: pixelated;
+}
+
+.rank-stars {
+  font-size: 8px;
+  display: block;
+}
+
+.rank-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--rank-clr);
+  margin-bottom: 5px; /* Dikurangi biar deket sama harga */
+}
+
+.rank-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.rank-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+  flex-grow: 1;
+}
+
+.rank-list li {
+  font-size: 0.8rem;
+  color: #444444;
+  padding: 8px 0;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.rank-btn {
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.rank-card:hover .rank-btn {
+  background: var(--rank-clr);
+}
+
+/* --- MEDIA QUERIES (Sama kayak request lu) --- */
+@media screen and (max-width: 992px) {
+  .ranks-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ranks-section { padding: 40px 0; }
+  .ranks-container { width: 94%; }
+  .ranks-header { margin-bottom: 25px; }
+  .ranks-title { font-size: 1.6rem; letter-spacing: -0.5px; }
+  .ranks-subtitle { font-size: 0.75rem; line-height: 1.4; padding: 0 15px; }
+  .ranks-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+  .rank-card {
+    padding: 15px 10px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  }
+
+  .rank-icon-box { width: 45px; height: 45px; margin-bottom: 10px; }
+  .rank-icon-box img { width: 30px; }
+  .rank-name-box { margin-bottom: 10px; }
+  .rank-stars { font-size: 6px; letter-spacing: 1px; }
+  .rank-name { font-size: 0.95rem; margin-bottom: 2px; }
+  .rank-price { font-size: 0.8rem; margin-bottom: 10px; }
+  .rank-list { margin-bottom: 15px; }
+  .rank-list li { font-size: 0.65rem; padding: 5px 0; color: #666666; border-bottom: 1px solid #fafafa; }
+  .rank-btn { padding: 10px 5px; font-size: 0.75rem; border-radius: 8px; letter-spacing: 0.3px; }
+}

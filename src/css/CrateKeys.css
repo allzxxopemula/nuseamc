@@ -1,0 +1,156 @@
+.keys-section {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #f4f4f4;
+}
+
+.keys-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.keys-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.keys-badge {
+  color: #ff0000;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: rgba(255, 0, 0, 0.05);
+  padding: 6px 15px;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.keys-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-top: 20px;
+  color: #111;
+}
+
+.keys-title span { color: #ff0000; }
+
+.keys-subtitle {
+  color: #777;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+.keys-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.key-card {
+  display: flex;
+  flex-direction: column;
+  padding: 35px 20px;
+  background: #ffffff;
+  border: 1px solid #eeeeee; 
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.key-card:hover {
+  transform: translateY(-8px);
+  border: 1px solid #ff0000; 
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.05);
+}
+
+.key-content h4 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #111111;
+  margin-bottom: 6px;
+}
+
+.key-price-info {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #111111;
+  margin-bottom: 15px;
+}
+
+.key-desc {
+  font-size: 0.8rem;
+  color: #666666;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.btn-buy-key {
+  display: block;
+  width: 100%;
+  background: #111111;
+  color: #ffffff;
+  padding: 12px 0;
+  border: 1px solid #111111; 
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-top: auto;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.key-card:hover .btn-buy-key {
+  background: #ff0000;
+  border-color: #ff0000;
+}
+
+@media screen and (max-width: 992px) {
+  .keys-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .keys-section { padding: 40px 0; }
+  
+  .keys-container { width: 94%; }
+
+  .keys-title { font-size: 1.6rem; }
+
+  .keys-subtitle { font-size: 0.75rem; line-height: 1.4; padding: 0 15px; }
+
+  .keys-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .key-card {
+    padding: 25px 12px;
+    border-radius: 15px;
+    border-width: 1px; 
+  }
+
+  .key-content h4 {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+
+  .key-price-info {
+    font-size: 0.75rem;
+    margin-bottom: 10px;
+  }
+
+  .key-desc {
+    font-size: 0.65rem;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+
+  .btn-buy-key {
+    padding: 10px 0;
+    font-size: 0.65rem;
+    border-radius: 10px;
+  }
+}

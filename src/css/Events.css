@@ -1,0 +1,234 @@
+.events-section {
+  width: 100%;
+  padding: 100px 0;
+  background-color: #f4f4f4;
+  color: #000000;
+}
+
+.events-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.events-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.events-badge {
+  color: #ff0000;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: rgba(255, 0, 0, 0.08);
+  padding: 6px 16px;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.events-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-top: 20px;
+}
+
+.events-title span { color: #ff0000; }
+
+.events-subtitle {
+  color: #777;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.event-card {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 25px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.event-card.upcoming {
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.event-card.upcoming:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 15px 30px rgba(59, 130, 246, 0.1);
+}
+
+.event-card.upcoming .dot {
+  background: #3b82f6;
+  box-shadow: 0 0 8px #3b82f6;
+}
+
+.event-card.upcoming .status-text {
+  color: #3b82f6;
+}
+
+.event-card.live {
+  border-color: #22c55e;
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.15);
+}
+
+.event-card.live::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 23px;
+  padding: 2px; 
+  background: linear-gradient(45deg, #22c55e, transparent, #22c55e);
+  mask-composite: exclude;
+  animation: rotateGlow 3s linear infinite;
+  z-index: -1;
+}
+
+.event-card.live .dot {
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+  animation: pulse 1s infinite;
+}
+
+.event-card.live .status-text {
+  color: #16a34a;
+}
+
+.event-card.ended {
+  border-color: #e5e7eb;
+  opacity: 0.6;
+  filter: grayscale(0.8);
+}
+
+.event-card.ended .dot {
+  background: #999;
+}
+
+.event-card.ended .status-text {
+  color: #666;
+}
+
+.event-status-wrapper {
+  margin-bottom: 20px;
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #f9f9f9;
+  padding: 5px 12px;
+  border-radius: 50px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.status-text {
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.event-icon-box {
+  width: 60px;
+  height: 60px;
+  background: #fcfcfc;
+  border: 1px solid #eee;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.event-icon-box img {
+  width: 35px;
+  height: 35px;
+  image-rendering: pixelated;
+}
+
+.event-date {
+  font-size: 11px;
+  color: #999;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.event-info h3 {
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.event-info p {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+@keyframes rotateGlow {
+  100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+}
+
+.event-card:hover .event-icon-box {
+  transform: scale(1.1) rotate(5deg);
+  background: #fff;
+}
+
+@media screen and (max-width: 992px) {
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .events-section {
+    padding: 60px 0;
+  }
+
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .events-subtitle { font-size: 0.75rem; line-height: 1.4; padding: 0 15px; }
+
+  .event-card {
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  .events-title { font-size: 1.8rem; }
+  .event-info h3 { font-size: 1rem; }
+  .event-info p { font-size: 0.75rem; }
+}

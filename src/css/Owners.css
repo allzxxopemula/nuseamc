@@ -1,0 +1,145 @@
+.owners-section {
+  width: 100%;
+  padding: 100px 0;
+  background-color: #f4f4f4;
+  color: #000000;
+}
+
+.owners-container {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER STYLE (NEW) */
+.owners-header {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.owners-badge {
+  color: #ff0000;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: rgba(255, 0, 0, 0.05);
+  padding: 6px 15px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.owners-title-main {
+  font-size: 2.2rem;
+  font-weight: 900;
+}
+
+.owners-title-main span {
+  color: #ff0000;
+}
+
+/* CONTENT GRID */
+.owners-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+}
+
+.owner-card {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.5); /* Kasih kaca tipis biar cakep */
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.owner-card:hover {
+  background: #ffffff;
+  transform: translateY(-5px);
+}
+
+.owner-image {
+  flex: 0 0 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.owner-image img {
+  width: 80px;
+  height: 80px;
+  border-radius: 15px;
+  image-rendering: pixelated;
+}
+
+.owner-info {
+  flex: 1;
+}
+
+.owner-name {
+  font-size: 1.6rem;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.owner-name span {
+  color: #ff0000;
+}
+
+.owner-role {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.owner-desc p {
+  font-size: 0.85rem;
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.7;
+}
+
+/* --- RESPONSIVE HP --- */
+@media screen and (max-width: 480px) {
+  .owners-section {
+    padding: 60px 0;
+  }
+
+  .owners-content {
+    flex-direction: column; /* HP tetap vertikal biar kebaca */
+    gap: 20px;
+  }
+
+  .owner-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 25px 15px;
+  }
+
+  .owner-image img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .owners-title-main {
+    font-size: 1.8rem;
+  }
+
+  .owner-name {
+    font-size: 1.3rem;
+  }
+
+  .owner-desc p {
+    font-size: 0.75rem;
+  }
+}

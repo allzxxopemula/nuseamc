@@ -1,0 +1,173 @@
+.socials-section {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #f4f4f4; /* Putih bersih biar nyambung */
+}
+
+.socials-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.socials-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.socials-badge {
+  color: #ff0000;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background: rgba(255, 0, 0, 0.05);
+  padding: 6px 15px;
+  border-radius: 50px;
+}
+
+.socials-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-top: 20px;
+  color: #111;
+}
+
+.socials-title span {
+  color: #ff0000;
+}
+
+.socials-subtitle {
+  color: #777;
+  max-width: 600px;
+  margin: 12px auto 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* GRID DESKTOP */
+.socials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 Kolom di PC */
+  gap: 25px;
+}
+
+/* CARD DESIGN (ADAPTED FROM EXCEL) */
+.social-card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.social-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--social-theme);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.social-icon {
+  width: 55px;
+  height: 55px;
+  background: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.social-card:hover .social-icon {
+  background: var(--social-theme);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.social-text h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.social-text p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES (Sesuai Request Excel-Section) --- */
+
+@media screen and (max-width: 992px) {
+  .socials-grid {
+    grid-template-columns: repeat(2, 1fr); /* Tablet jadi 2 kolom */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .socials-section {
+    padding: 40px 0;
+  }
+
+  .socials-container {
+    width: 94%;
+  }
+
+  .socials-header {
+    margin-bottom: 25px;
+  }
+
+  .socials-title {
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+  }
+
+  .socials-subtitle {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    padding: 0 15px;
+  }
+
+  .socials-grid {
+    grid-template-columns: repeat(2, 1fr); /* TETAP 2 KOLOM DI HP */
+    gap: 10px;
+  }
+
+  .social-card {
+    padding: 20px 12px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+  }
+
+  .social-text h4 {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+
+  .social-text p {
+    display: block; /* DESKRIPSI TETAP ADA */
+    font-size: 0.65rem;
+    line-height: 1.3;
+    color: #888;
+  }
+}
