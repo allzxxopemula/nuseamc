@@ -16,6 +16,7 @@ import Events from './sections/Events';
 import Socials from './sections/Socials';
 import CrateKeys from './sections/CrateKeys';
 import Footer from './sections/Footer';
+import Crates from './sections/Crates';
 
 // Import GSAP & Assets
 import MainLogo from './assets/nusealogo.png';
@@ -112,6 +113,7 @@ function App() {
         <Features />
         <Team />
         <Ranks />
+        <Crates />
         <CrateKeys />
         <Excellence />
         <Events />

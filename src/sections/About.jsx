@@ -20,7 +20,7 @@ const About = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2500); // 2500 = 2.5 detik. Kalau mau pas 1 detik ganti jadi 1000
+    }, 2500);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -44,7 +44,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Sisi Kanan: Teks Penjelasan (Nggak diubah) */}
+        {/* Sisi Kanan: Teks Penjelasan*/}
         <div className="about-right">
           <span className="about-subtitle">ABOUT OUR SERVER</span>
           <h2 className="about-title">

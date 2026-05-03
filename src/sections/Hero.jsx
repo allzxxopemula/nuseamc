@@ -21,7 +21,6 @@ const Hero = () => {
 
   // --- ANIMASI KEDATANGAN DENGAN DELAY ---
   useGSAP(() => {
-    // Kita kasih delay 2.2 detik biar sinkron sama intro di App.jsx
     const tl = gsap.timeline({ 
       delay: 2.7, 
       defaults: { ease: "power4.out" } 
@@ -61,7 +60,7 @@ const Hero = () => {
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut",
-      delay: 3.5 // Floating baru jalan setelah animasi masuk selesai
+      delay: 3.5 
     });
   }, { scope: heroRef });
 

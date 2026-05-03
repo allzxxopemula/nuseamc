@@ -6,8 +6,8 @@ const Team = () => {
   const teamMembers = [
     { name: "Fariz", role: "CO-Owner", color: "#ff4d4d", skin: "https://mc-heads.net/avatar/MHF_Steve/64" },
     { name: "Azdaiz", role: "Owner", color: "#ff4d4d", skin: "https://mc-heads.net/avatar/MHF_Alex/64" },
-    { name: "Evin", role: "Admin", color: "#ffb800", skin: "https://mc-heads.net/avatar/MHF_Villager/64" },
-    { name: "Galng", role: "Admin", color: "#ffb800", skin: "https://mc-heads.net/avatar/MHF_OakLog/64" },
+    { name: "Evin", role: "Mod", color: "#00569c", skin: "https://mc-heads.net/avatar/MHF_Villager/64" },
+    { name: "Galng", role: "Builder", color: "#ff9900", skin: "https://mc-heads.net/avatar/MHF_OakLog/64" },
     { name: "Alfian", role: "Mod", color: "#00569c", skin: "https://mc-heads.net/avatar/MHF_Enderman/64" },
     { name: "Sanderlay", role: "Helper", color: "#4ade80", skin: "https://mc-heads.net/avatar/MHF_Creeper/64" },
   ];
