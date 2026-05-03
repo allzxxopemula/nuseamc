@@ -12,24 +12,24 @@ const crateData = [
     items: ["Common Tools", "Iron Ingots", "Golden Apples", "Vote Keys"]
   },
   {
+    name: "Crimson Crate",
+    stars: "Legendary",
+    // Icon: Red Shulker Box
+    icon: "https://minecraft.wiki/images/Invicon_Red_Shulker_Box.png",
+    color: "#cf1212", // Merah
+    items: ["Netherite Scraps", "Power IV Bow", "Crimson Armor", "Spawner Fragments"]
+  },
+    {
     name: "Nusea Crate",
-    stars: "Rare",
+    stars: "Special",
     // Icon: Orange Shulker Box
     icon: "https://minecraft.wiki/images/Invicon_Orange_Shulker_Box.png",
     color: "#e67e22", // Oren
     items: ["Diamond Gear", "Enchanted Books", "XP Bottles", "Exclusive Tags"]
   },
   {
-    name: "Crimson Crate",
-    stars: "Epic",
-    // Icon: Red Shulker Box
-    icon: "https://minecraft.wiki/images/Invicon_Red_Shulker_Box.png",
-    color: "#cf1212", // Merah
-    items: ["Netherite Scraps", "Power IV Bow", "Crimson Armor", "Spawner Fragments"]
-  },
-  {
     name: "Nebula Crate",
-    stars: "Legendary",
+    stars: "Rare",
     // Icon: Light Blue Shulker Box
     icon: "https://minecraft.wiki/images/Invicon_Light_Blue_Shulker_Box.png",
     color: "#3498db", // Biru Light
@@ -37,7 +37,7 @@ const crateData = [
   },
   {
     name: "Poker Crate",
-    stars: "Special",
+    stars: "Epic",
     // Icon: Purple Shulker Box
     icon: "https://minecraft.wiki/images/Invicon_Purple_Shulker_Box.png",
     color: "#9b59b6", // Ungu

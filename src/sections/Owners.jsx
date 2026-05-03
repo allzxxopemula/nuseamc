@@ -6,7 +6,7 @@ const ownerData = [
     {
       name: "Azdaiz",
       role: "SERVER OWNER",
-      img: "https://mc-heads.net/avatar/Azdaiz/180",
+      img: "https://mc-heads.net/avatar/AZDAIZz/64",
       desc: "As the Owner of Nusantara Aether, Azdaiz is the primary force behind the server's growth. He ensures everything runs smoothly, manages the big picture, and makes sure every player has the best experience possible in the world of Aether."
     },
     {

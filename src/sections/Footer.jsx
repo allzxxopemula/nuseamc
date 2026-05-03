@@ -45,7 +45,7 @@ const Footer = () => {
             <h4 className="footer-title">Play Now</h4>
             <div className="footer-status">
               <span className="status-dot"></span>
-              <p>IP: nusea.raznar.net</p>
+              <p>IP: play.nusea.my.id</p>
             </div>
             <p className="footer-support">Need help? Contact our staff on Discord.</p>
           </div>

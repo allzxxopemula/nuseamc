@@ -12,7 +12,7 @@ const LiveStats = () => {
   const [displayIndex, setDisplayIndex] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  const IP_SERVER = "nusea.raznar.net:25048"; 
+  const IP_SERVER = "play.nusea.my.id"; 
 
   // List Nama Akun Resmi Mojang untuk Kepala Mob (MHF Series)
   const mobHeads = [

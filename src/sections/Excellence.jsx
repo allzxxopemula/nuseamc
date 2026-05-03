@@ -1,14 +1,7 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import '../css/Excellence.css';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Excellence = () => {
-  const mainRef = useRef(null);
-
   const excellenceData = [
     { icon: "fa-solid fa-up-down-left-right", title: "Universal Access", desc: "Connect seamlessly whether you're on Java (PC) or Bedrock (PE/Console)." },
     { icon: "fa-solid fa-shield-halved", title: "Grief Protection", desc: "Claim your territory and build without fear. Your hard work is safe with us." },
@@ -18,32 +11,8 @@ const Excellence = () => {
     { icon: "fa-solid fa-users-gear", title: "Professional Care", desc: "Experienced staff members ensuring a fair and toxic-free environment." }
   ];
 
-  useGSAP(() => {
-    let mm = gsap.matchMedia();
-
-    mm.add("(min-width: 0px)", () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: mainRef.current,
-          start: "bottom bottom",
-          end: "+=1500", 
-          pin: true,
-          scrub: 1,
-          anticipatePin: 1
-        }
-      });
-
-      // Pake fromTo biar PASTI muncul dari opacity 0 ke 1
-      tl.fromTo(".excel-card", 
-        { y: 100, opacity: 0 }, 
-        { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.out" }
-      );
-    });
-
-  }, { scope: mainRef });
-
   return (
-    <section className="excel-section" ref={mainRef} id="excellence">
+    <section className="excel-section" id="excellence">
       <div className="excel-container">
         <div className="excel-header">
           <span className="excel-badge">OUR SUPERIORITY</span>

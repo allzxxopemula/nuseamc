@@ -15,11 +15,10 @@ const Hero = () => {
   const descRef = useRef(null);
   const buttonRef = useRef(null);
 
-  const javaIP = "nusea.raznar.net";
-  const bedrockIP = "nusea.raznar.net";
-  const bedrockPort = "25048";
+  const javaIP = "play.nusea.my.id";
+  const bedrockIP = "ip=play.nusea.my.id";
+  const bedrockPort = "port=default";
 
-  // --- ANIMASI KEDATANGAN DENGAN DELAY ---
   useGSAP(() => {
     const tl = gsap.timeline({ 
       delay: 2.7, 
@@ -47,7 +46,7 @@ const Hero = () => {
     );
 
     // 4. Tombol muncul barengan (stagger)
-    tl.fromTo(".hero-buttons button", 
+    tl.fromTo(".hero-buttons button, .hero-buttons a", 
       { scale: 0.8, opacity: 0 }, 
       { scale: 1, opacity: 1, stagger: 0.2, duration: 0.8, ease: "back.out(1.7)" }, 
       "-=0.5"
@@ -110,12 +109,12 @@ const Hero = () => {
         </h1>
         
         <p className="hero-description" ref={descRef}>
-          Unleash your ultimate potential in a world without limits. Build your legacy at <b>nusea.raznar.net</b>
+          Unleash your ultimate potential in a world without limits. Build your legacy at <b>play.nusea.my.id</b>
         </p>
 
         <div className="hero-buttons" ref={buttonRef}>
           <button className="btn-play-now" onClick={() => setIsModalOpen(true)}>Play Now</button>
-          <button className="btn-outline" onClick={scrollToFeatures}>Features</button>
+          <a href="https://minecraft-mp.com/server/357565/vote/" className="btn-outline vote-btn" target="_blank" rel="noreferrer">Vote</a>
           <button className="btn-outline" onClick={() => setIsRulesOpen(true)}>Rules</button>
         </div>
       </div>
@@ -140,7 +139,7 @@ const Hero = () => {
               <div className="ip-card">
                 <span className="edition-label">Bedrock Edition</span>
                 <div className="ip-box">
-                  <code>{bedrockIP}:{bedrockPort}</code>
+                  <code>{bedrockIP}<br></br>{bedrockPort}</code>
                   <button onClick={() => copyToClipboard(`${bedrockIP}:${bedrockPort}`, 'bedrock')}>
                     {copyStatus === 'bedrock' ? 'Copied!' : 'Copy'}
                   </button>
