@@ -152,7 +152,7 @@
 /* ==========================================
    KODE MODAL (TIDAK BERUBAH)
    ========================================== */
-.modal-overlay {
+.modal-overlay-rank {
   position: fixed;
   top: 0; left: 0;
   width: 100vw; height: 100vh;
@@ -163,7 +163,7 @@
   animation: fadeIn 0.3s ease-out forwards;
 }
 
-.modal-container {
+.modal-overlay-rank-container {
   background: #ffffff;
   border-radius: 24px;
   width: 90%;
@@ -173,14 +173,14 @@
   animation: scaleUp 0.3s ease-out forwards;
 }
 
-.modal-grid {
+.modal-overlay-rank-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
 }
 
-.modal-qr-section {
+.modal-overlay-rank-qr-section {
   display: flex; flex-direction: column; align-items: center;
   background: #f8f9fa; padding: 30px; border-radius: 16px; border: 1px dashed #cccccc;
 }
@@ -189,15 +189,15 @@
 .qr-image { width: 200px; height: 200px; object-fit: contain; }
 .qr-text { font-weight: 700; color: #555; font-size: 0.95rem; }
 
-.modal-info-section { display: flex; flex-direction: column; }
-.modal-title { font-size: 1.8rem; font-weight: 900; margin-bottom: 20px; color: #111; }
-.modal-summary { background: #fdfdfd; border-left: 4px solid #111; padding: 15px 20px; border-radius: 0 12px 12px 0; margin-bottom: 20px; }
-.modal-summary h2 { font-size: 1.8rem; font-weight: 900; }
-.modal-price span { font-weight: 800; color: #111; font-size: 1.2rem; }
-.modal-instruction { font-size: 0.95rem; color: #444; line-height: 1.5; margin-bottom: 20px; }
-.modal-security-note { display: flex; align-items: flex-start; gap: 10px; background: rgba(0, 206, 209, 0.1); padding: 15px; border-radius: 12px; margin-bottom: 30px; }
-.modal-security-note p { font-size: 0.8rem; color: #008b8b; font-weight: 600; margin: 0; }
-.modal-actions { display: flex; gap: 15px; }
+.modal-overlay-rank-info-section { display: flex; flex-direction: column; }
+.modal-overlay-rank-title { font-size: 1.8rem; font-weight: 900; margin-bottom: 20px; color: #111; }
+.modal-overlay-rank-summary { background: #fdfdfd; border-left: 4px solid #111; padding: 15px 20px; border-radius: 0 12px 12px 0; margin-bottom: 20px; }
+.modal-overlay-rank-summary h2 { font-size: 1.8rem; font-weight: 900; }
+.modal-overlay-rank-price span { font-weight: 800; color: #111; font-size: 1.2rem; }
+.modal-overlay-rank-instruction { font-size: 0.95rem; color: #444; line-height: 1.5; margin-bottom: 20px; }
+.modal-overlay-rank-security-note { display: flex; align-items: flex-start; gap: 10px; background: rgba(0, 206, 209, 0.1); padding: 15px; border-radius: 12px; margin-bottom: 30px; }
+.modal-overlay-rank-security-note p { font-size: 0.8rem; color: #008b8b; font-weight: 600; margin: 0; }
+.modal-overlay-rank-actions { display: flex; gap: 15px; }
 .btn-cancel, .btn-proceed { flex: 1; padding: 14px; border-radius: 12px; font-weight: 700; border: none; cursor: pointer; }
 .btn-cancel { background: #f0f0f0; color: #555; }
 .btn-proceed { color: white; }
@@ -214,25 +214,25 @@
 
 @media screen and (max-width: 768px) {
   /* Overlay nempel bawah (Bottom Sheet) */
-  .modal-overlay {
+  .modal-overlay-rank {
     align-items: flex-end;
   }
 
-  .modal-container {
+  .modal-overlay-rank-container {
     width: 100%;
     max-width: 100%;
-    padding: 15px 15px 25px; 
+    padding: 15px 15px 40px; 
     border-radius: 24px 24px 0 0;
     animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
-  .modal-grid {
+  .modal-overlay-rank-grid {
     grid-template-columns: 1fr; /* Satu kolom biar fokus */
     gap: 15px;
   }
 
   /* --- BAGIAN QRIS (DIBESARKAN) --- */
-  .modal-qr-section {
+  .modal-overlay-rank-qr-section {
     padding: 15px;
     background: #fdfdfd;
     border: 1.5px dashed #ddd;
@@ -260,13 +260,13 @@
   }
 
   /* --- INFO DETAIL (DIPERKECIL) --- */
-  .modal-title {
+  .modal-overlay-rank-title {
     font-size: 1.1rem; /* Lebih kecil */
     margin-bottom: 12px;
     text-align: center;
   }
 
-  .modal-summary {
+  .modal-overlay-rank-summary {
     padding: 10px;
     margin-bottom: 10px;
     text-align: center;
@@ -274,21 +274,21 @@
     border-bottom: 3px solid var(--rank-clr); /* Indikator warna di bawah */
   }
 
-  .modal-summary p {
+  .modal-overlay-rank-summary p {
     font-size: 0.7rem; /* Font diperkecil */
     margin-bottom: 2px;
   }
 
-  .modal-summary h2 {
+  .modal-overlay-rank-summary h2 {
     font-size: 1.4rem; /* Nama Rank tetap tegas tapi pas */
     margin-bottom: 0;
   }
 
-  .modal-price span {
+  .modal-overlay-rank-price span {
     font-size: 1.1rem;
   }
 
-  .modal-instruction {
+  .modal-overlay-rank-instruction {
     font-size: 0.75rem; /* Font instruksi kecil */
     text-align: center;
     line-height: 1.4;
@@ -296,19 +296,19 @@
     color: #666;
   }
 
-  .modal-security-note {
+  .modal-overlay-rank-security-note {
     padding: 8px 12px;
     margin-bottom: 15px;
     gap: 8px;
   }
 
-  .modal-security-note p {
+  .modal-overlay-rank-security-note p {
     font-size: 0.65rem; /* Sangat kecil biar gak menonjol */
   }
 
   /* Tombol tetap berjajar atau tumpuk tergantung selera, 
      di sini gue buat row biar ringkas */
-  .modal-actions {
+  .modal-overlay-rank-actions {
     display: flex;
     flex-direction: row; 
     gap: 8px;
