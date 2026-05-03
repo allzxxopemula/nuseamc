@@ -27,7 +27,7 @@ const rankData = [
     name: "Zephyr",
     price: "20.000",
     stars: "⭐⭐",
-    icon: "https://minecraft.wiki/images/Quartz_JE2_BE2.png",
+    icon: "https://minecraft.wiki/images/Invicon_Nether_Quartz.png?897dd",
     color: "#7f8c8d",
     perks: [
       "Custom Prefix",
@@ -78,7 +78,7 @@ const rankData = [
     name: "Obscyra",
     price: "50.000",
     stars: "⭐⭐⭐⭐⭐",
-    icon: "https://minecraft.wiki/images/Heart_of_the_Sea_JE1_BE1.png",
+    icon: "https://minecraft.wiki/images/Invicon_Heart_of_the_Sea.png?2df63",
     color: "#00ced1",
     perks: [
       "Custom Prefix & Names",
