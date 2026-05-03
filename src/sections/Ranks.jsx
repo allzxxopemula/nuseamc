@@ -53,7 +53,7 @@ const rankData = [
       "Vault 0/3",
       "Shop discount 2%",
       "Unlock previous rank features",
-      "Unlock /repair, /heal"
+      "Unlock /repair, /heal, /enderchest"
     ]
   },
   {
