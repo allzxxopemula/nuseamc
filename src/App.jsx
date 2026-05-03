@@ -14,7 +14,6 @@ import LiveStats from './sections/LiveStats';
 import Excellence from './sections/Excellence';
 import Events from './sections/Events';
 import Socials from './sections/Socials';
-import CrateKeys from './sections/CrateKeys';
 import Footer from './sections/Footer';
 import Crates from './sections/Crates';
 
@@ -114,7 +113,6 @@ function App() {
         <Team />
         <Ranks />
         <Crates />
-        <CrateKeys />
         <Excellence />
         <Events />
         <Faq />
