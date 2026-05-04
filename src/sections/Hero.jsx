@@ -16,8 +16,8 @@ const Hero = () => {
   const buttonRef = useRef(null);
 
   const javaIP = "play.nusea.my.id";
-  const bedrockIP = "ip=play.nusea.my.id";
-  const bedrockPort = "port=default";
+  const bedrockIP = "ip:play.nusea.my.id";
+  const bedrockPort = "port:25048";
 
   useGSAP(() => {
     const tl = gsap.timeline({ 
