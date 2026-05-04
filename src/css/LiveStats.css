@@ -152,12 +152,22 @@
 }
 
 .shuffle-animation {
-  animation: fadeShuffle 0.6s ease-in-out;
+  animation: smoothShuffle 1.5s ease-in-out;
 }
 
-@keyframes fadeShuffle {
-  0% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
+@keyframes smoothShuffle {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.8) translateY(10px) rotate(5deg); 
+  }
+  50% { 
+    opacity: 0.7; 
+    transform: scale(1.05) translateY(-5px) rotate(-2deg); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: scale(1) translateY(0) rotate(0deg); 
+  }
 }
 
 .no-play {
