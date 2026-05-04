@@ -152,7 +152,7 @@
 }
 
 .shuffle-animation {
-  animation: slideInFromRight 1s ease-out;
+  animation: slideInFromRight 0.3s ease-out;
 }
 
 @keyframes slideInFromRight {

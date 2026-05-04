@@ -52,12 +52,12 @@ const LiveStats = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Timer Shuffle: Mengubah displayIndex tiap 1 detik
+  // Timer Shuffle: Mengubah displayIndex tiap 0.5 detik
   useEffect(() => {
     if (serverData.playerList.length > 6) {
       const rotateInterval = setInterval(() => {
         setDisplayIndex((prev) => (prev + 1) % serverData.playerList.length);
-      }, 1000);
+      }, 500);
       return () => clearInterval(rotateInterval);
     }
   }, [serverData.playerList]);
