@@ -52,12 +52,12 @@ const LiveStats = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Timer Shuffle: Mengubah displayIndex tiap 1.5 detik
+  // Timer Shuffle: Mengubah displayIndex tiap 1 detik
   useEffect(() => {
     if (serverData.playerList.length > 6) {
       const rotateInterval = setInterval(() => {
         setDisplayIndex((prev) => (prev + 1) % serverData.playerList.length);
-      }, 1500);
+      }, 1000);
       return () => clearInterval(rotateInterval);
     }
   }, [serverData.playerList]);
@@ -126,8 +126,8 @@ const LiveStats = () => {
                     }
 
                     return (
-                      /* KUNCI: Pake key={name} supaya pas shuffle, elemen di-render ulang & animasi jalan */
-                      <div key={name} className="head-mini shuffle-animation">
+                      /* KUNCI: Pake key={name + displayIndex} supaya pas shuffle, elemen di-render ulang & animasi jalan setiap kali */
+                      <div key={name + displayIndex} className="head-mini shuffle-animation">
                         <img 
                           src={finalSkinUrl} 
                           alt={name}
@@ -143,7 +143,7 @@ const LiveStats = () => {
                 ) : serverData.players > 0 ? (
                   [...Array(Math.min(serverData.players, 6))].map((_, i) => (
                     /* Supaya Mob juga punya animasi pas pertama muncul */
-                    <div key={`mob-${i}`} className="head-mini shuffle-animation">
+                    <div key={`mob-${i}-${displayIndex}`} className="head-mini shuffle-animation">
                       <img src={getPersistentMobHead(`mob-${i}-${new Date().getSeconds()}`)} className="skin-img" alt="mob" />
                     </div>
                   ))
