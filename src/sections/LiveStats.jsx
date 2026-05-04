@@ -12,7 +12,6 @@ const LiveStats = () => {
   const [displayIndex, setDisplayIndex] = useState(0);
   const [loading, setLoading] = useState(true);
 
-  // GUNAKAN PORT ASLI (25048) BIAR QUERY TEMBUS
   const IP_SERVER = "play.nusea.my.id:25048"; 
 
   const mobHeads = [
@@ -33,7 +32,6 @@ const LiveStats = () => {
 
   useEffect(() => {
     const fetchStatus = () => {
-      // Pake timestamp (?t=) biar bener-bener realtime gak kena cache browser
       fetch(`https://api.mcstatus.io/v2/status/java/${IP_SERVER}?t=${Date.now()}`)
         .then(res => res.json())
         .then(data => {
@@ -50,11 +48,11 @@ const LiveStats = () => {
     };
 
     fetchStatus();
-    // Update tiap 20 detik
     const interval = setInterval(fetchStatus, 20000);
     return () => clearInterval(interval);
   }, []);
 
+  // Timer Shuffle: Mengubah displayIndex tiap 3 detik
   useEffect(() => {
     if (serverData.playerList.length > 6) {
       const rotateInterval = setInterval(() => {
@@ -121,16 +119,15 @@ const LiveStats = () => {
                   visiblePlayers.map((player, index) => {
                     const name = player.name_clean || player.name;
                     const isBedrock = name.startsWith('.');
-                    const isCracked = !player.uuid || player.uuid.startsWith('00000000');
-
-                    // Gunakan Crafthead karena paling stabil untuk nampilin head
+                    
                     let finalSkinUrl = `https://crafthead.net/helm/${name}/64`;
                     if (isBedrock) {
                         finalSkinUrl = `https://api.geysermc.org/v2/skin/${player.uuid || name.replace('.', '')}`;
                     }
 
                     return (
-                      <div key={index} className="head-mini shuffle-animation">
+                      /* KUNCI: Pake key={name} supaya pas shuffle, elemen di-render ulang & animasi jalan */
+                      <div key={name} className="head-mini shuffle-animation">
                         <img 
                           src={finalSkinUrl} 
                           alt={name}
@@ -144,9 +141,9 @@ const LiveStats = () => {
                     );
                   })
                 ) : serverData.players > 0 ? (
-                  /* FALLBACK: Jika list masih kosong (hidden), munculin Mob Random sesuai jumlah player online */
                   [...Array(Math.min(serverData.players, 6))].map((_, i) => (
-                    <div key={i} className="head-mini">
+                    /* Supaya Mob juga punya animasi pas pertama muncul */
+                    <div key={`mob-${i}`} className="head-mini shuffle-animation">
                       <img src={getPersistentMobHead(`mob-${i}-${new Date().getSeconds()}`)} className="skin-img" alt="mob" />
                     </div>
                   ))
