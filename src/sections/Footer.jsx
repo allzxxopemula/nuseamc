@@ -55,7 +55,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <hr className="footer-divider" />
           <div className="footer-copyright">
-            <p>&copy; {currentYear} <span>Nusantara Eather</span>. All rights reserved | BY Allzxxo Dev</p>
+            <p>&copy; {currentYear} <span>Nusantara Eather</span>. All rights reserved | By <a href="https://github.com/allzxxopemula" target="_blank" rel="noreferrer">Allzxxo Dev</a></p>
             <p className="dev-credit">Designed for Nusantara Community</p>
           </div>
         </div>
