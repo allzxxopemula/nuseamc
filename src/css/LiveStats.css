@@ -3,6 +3,7 @@
   width: 100%;
   padding: 80px 0;
   background-color: #ffffff;
+  overflow: hidden;
 }
 
 .stats-container {
@@ -117,26 +118,30 @@
   transform: rotate(-10deg) scale(1.1);
 }
 
-/* --- EXPLORERS / HEADS UI --- */
+/* --- EXPLORERS / HEADS UI (THE SHUFFLE) --- */
 .heads-mini-grid {
   display: flex;
   align-items: center;
   margin-top: 5px;
+  min-width: 150px;
 }
 
 .head-mini {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   margin-left: -10px;
   border: 2px solid #ffffff;
   border-radius: 8px;
   overflow: hidden;
   background: #eee;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
-.head-mini:first-child { margin-left: 0; }
+.head-mini:first-child { 
+  margin-left: 0; 
+}
 
 .head-mini img {
   width: 100%;
@@ -146,23 +151,25 @@
 }
 
 .head-mini:hover {
-  transform: translateY(-5px) scale(1.2);
-  z-index: 10;
+  transform: translateY(-8px) scale(1.3);
+  z-index: 50;
   border-color: #ff0000;
+  margin-right: 5px;
 }
 
+/* --- ANIMASI SHUFFLE FIX --- */
 .shuffle-animation {
-  animation: slideInFromRight 0.3s ease-out;
+  animation: slideInFromRight 0.4s ease-out forwards;
 }
 
 @keyframes slideInFromRight {
   0% { 
     opacity: 0; 
-    transform: translateX(100%) scale(0.8); 
+    transform: translateX(15px); 
   }
   100% { 
     opacity: 1; 
-    transform: translateX(0) scale(1); 
+    transform: translateX(0); 
   }
 }
 
@@ -172,57 +179,51 @@
   color: #ccc;
 }
 
-/* --- RESPONSIVE KHUSUS HP (1 BARIS 1 CARD - STACKED) --- */
+/* --- RESPONSIVE KHUSUS HP --- */
 @media screen and (max-width: 600px) {
   .stats-section {
     padding: 30px 0;
   }
 
-  /* Grid jadi 1 kolom saja biar lega */
   .stats-grid {
     grid-template-columns: 1fr; 
-    gap: 12px; /* Jarak antar baris card */
+    gap: 12px;
     padding: 0 5px;
   }
 
-  /* Semua card (termasuk yang players) ukurannya sama rata */
   .stat-card, 
   .explorers-card {
     grid-column: span 1 !important; 
-    flex-direction: row !important; /* Icon kiri, teks kanan */
+    flex-direction: row !important;
     justify-content: flex-start !important;
     align-items: center !important;
     text-align: left !important;
     padding: 15px 20px;
-    height: 75px !important; /* Tinggi card lebih proporsional */
+    height: 75px !important;
     border-radius: 15px;
     gap: 15px;
   }
 
-  /* Info wrapper biar gak center lagi, tapi lurus ke kiri samping icon */
   .stat-info {
     width: auto;
     align-items: flex-start !important;
     text-align: left !important;
   }
 
-  /* Ukuran Icon di HP dibuat pas (gak kegedean/kekecilan) */
   .stat-icon-wrapper {
     width: 42px;
     height: 42px;
     font-size: 1.1rem;
     border-radius: 10px;
-    margin-bottom: 0; /* Hilangkan margin bawah karena sekarang sampingan */
+    margin-bottom: 0;
   }
 
-  /* Font Label (Kecil & Bold) */
   .stat-label {
     font-size: 0.65rem;
     margin-bottom: 2px;
     width: auto;
   }
 
-  /* Font Angka (Ukuran Sedang biar elegan) */
   .stat-value {
     font-size: 1.4rem;
     font-weight: 900;
@@ -230,7 +231,6 @@
     display: block;
   }
 
-  /* Styling Khusus Grid Kepala Skin di baris ke-4 */
   .heads-mini-grid {
     width: auto;
     justify-content: flex-start !important;
@@ -251,7 +251,6 @@
   }
 }
 
-/* Fix untuk HP layar sangat kecil */
 @media screen and (max-width: 350px) {
   .stat-card {
     padding: 10px 15px;

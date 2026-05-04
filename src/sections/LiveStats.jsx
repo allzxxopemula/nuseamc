@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/LiveStats.css';
 
 const LiveStats = () => {
@@ -52,27 +52,30 @@ const LiveStats = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Timer Shuffle: Mengubah displayIndex tiap 0.5 detik
+  // LOGIKA SHUFFLE NGEBUT (GANTI TIAP 1 DETIK)
   useEffect(() => {
     if (serverData.playerList.length > 6) {
       const rotateInterval = setInterval(() => {
-        setDisplayIndex((prev) => (prev + 1) % serverData.playerList.length);
-      }, 500);
+        setDisplayIndex(prev => (prev + 1) % serverData.playerList.length);
+      }, 100); 
       return () => clearInterval(rotateInterval);
     }
   }, [serverData.playerList]);
 
-  const visiblePlayers = useMemo(() => {
-    const list = serverData.playerList || [];
+  // POTONG LIST 6 ORANG BIAR RAPIH
+  const getVisiblePlayers = () => {
+    const list = serverData.playerList;
     if (list.length === 0) return [];
     if (list.length <= 6) return list;
-    
-    let visible = [];
+
+    let items = [];
     for (let i = 0; i < 6; i++) {
-      visible.push(list[(displayIndex + i) % list.length]);
+      items.push(list[(displayIndex + i) % list.length]);
     }
-    return visible;
-  }, [serverData.playerList, displayIndex]);
+    return items;
+  };
+
+  const visiblePlayers = getVisiblePlayers();
 
   return (
     <section className="stats-section">
@@ -126,8 +129,7 @@ const LiveStats = () => {
                     }
 
                     return (
-                      /* KUNCI: Pake key={name + displayIndex} supaya pas shuffle, elemen di-render ulang & animasi jalan setiap kali */
-                      <div key={name + displayIndex} className="head-mini shuffle-animation">
+                      <div key={`${name}-${displayIndex}-${index}`} className="head-mini shuffle-animation">
                         <img 
                           src={finalSkinUrl} 
                           alt={name}
@@ -142,8 +144,7 @@ const LiveStats = () => {
                   })
                 ) : serverData.players > 0 ? (
                   [...Array(Math.min(serverData.players, 6))].map((_, i) => (
-                    /* Supaya Mob juga punya animasi pas pertama muncul */
-                    <div key={`mob-${i}-${displayIndex}`} className="head-mini shuffle-animation">
+                    <div key={`mob-${i}`} className="head-mini shuffle-animation">
                       <img src={getPersistentMobHead(`mob-${i}-${new Date().getSeconds()}`)} className="skin-img" alt="mob" />
                     </div>
                   ))
