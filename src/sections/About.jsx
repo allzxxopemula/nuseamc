@@ -36,7 +36,7 @@ const About = () => {
               <img 
                 key={index}
                 src={img} 
-                alt={`Nusantara Aether ${index + 1}`} 
+                alt={`Nusantara Eather ${index + 1}`} 
                 // Tambahin class 'active' kalau indexnya sama dengan gambar yang lagi jalan
                 className={`about-img ${index === currentIndex ? 'active' : ''}`} 
               />
@@ -48,19 +48,19 @@ const About = () => {
         <div className="about-right">
           <span className="about-subtitle">ABOUT OUR SERVER</span>
           <h2 className="about-title">
-            Welcome to <span>Nusantara Aether</span>
+            Welcome to <span>Nusantara Eather</span>
           </h2>
           
           <div className="about-content">
             <p>
-              Nusantara Aether is a premium Minecraft Survival Multiplayer (SMP) server 
+              Nusantara Eather is a premium Minecraft Survival Multiplayer (SMP) server 
               created with the goal of connecting players in a fun, supportive, and healthy community. 
               Built on high-performance hardware to ensure a smooth, lag-free experience for everyone.
             </p>
             
             <p>
               Whether you're a casual adventurer, a competitive builder, or someone who just wants to 
-              hang out and meet new friends, Nusantara Aether offers a welcoming space to play Minecraft 
+              hang out and meet new friends, Nusantara Eather offers a welcoming space to play Minecraft 
               your way. We focus on fair play and a friendly atmosphere.
             </p>
             

@@ -7,13 +7,13 @@ const ownerData = [
       name: "Azdaiz",
       role: "SERVER OWNER",
       img: "https://mc-heads.net/avatar/AZDAIZz/64",
-      desc: "As the Owner of Nusantara Aether, Azdaiz is the primary force behind the server's growth. He ensures everything runs smoothly, manages the big picture, and makes sure every player has the best experience possible in the world of Aether."
+      desc: "As the Owner of Nusantara Eather, Azdaiz is the primary force behind the server's growth. He ensures everything runs smoothly, manages the big picture, and makes sure every player has the best experience possible in the world of Eather."
     },
     {
       name: "Fariz",
       role: "FOUNDER & CO-OWNER",
       img: "https://mc-heads.net/avatar/.LAxRizz/180", 
-      desc: "Fariz is the original visionary and Founder of the community. Now serving as Co-Owner, he continues to guide the server's heart and soul, ensuring that the initial vision of fairness and friendship remains at the core of Nusantara Aether."
+      desc: "Fariz is the original visionary and Founder of the community. Now serving as Co-Owner, he continues to guide the server's heart and soul, ensuring that the initial vision of fairness and friendship remains at the core of Nusantara Eather."
     }
   ];
 

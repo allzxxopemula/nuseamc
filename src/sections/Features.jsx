@@ -41,7 +41,7 @@ const Features = () => {
         <div className="features-header">
           <span className="features-badge">FEATURES</span>
           <h2 className="features-main-title">
-            Explore <span>Nusantara Aether</span>
+            Explore <span>Nusantara Eather</span>
           </h2>
           <p className="features-subtitle">
             We’ve integrated a suite of custom-engineered mechanics to ensure your journey is <b>dynamic, rewarding, and full of surprises</b>. Discover a new standard of gameplay.

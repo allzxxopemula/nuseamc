@@ -12,9 +12,9 @@ const Footer = () => {
           
           {/* Kolom 1: Brand Info */}
           <div className="footer-column brand-info">
-            <img src={FooterLogo} alt="Nusantara Aether" className="footer-logo" />
+            <img src={FooterLogo} alt="Nusantara Eather" className="footer-logo" />
             <p className="footer-about">
-              Nusantara Aether is a premium Minecraft server providing a limitless survival experience for both Java and Bedrock players.
+              Nusantara Eather is a premium Minecraft server providing a limitless survival experience for both Java and Bedrock players.
             </p>
           </div>
 
@@ -55,7 +55,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <hr className="footer-divider" />
           <div className="footer-copyright">
-            <p>&copy; {currentYear} <span>Nusantara Aether</span>. All rights reserved | BY Allzxxo Dev</p>
+            <p>&copy; {currentYear} <span>Nusantara Eather</span>. All rights reserved | BY Allzxxo Dev</p>
             <p className="dev-credit">Designed for Nusantara Community</p>
           </div>
         </div>

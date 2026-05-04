@@ -105,7 +105,7 @@ const Hero = () => {
         />
         
         <h1 className="hero-title" ref={titleRef}>
-          Welcome to <span>Nusantara Aether</span>
+          Welcome to <span>Nusantara Eather</span>
         </h1>
         
         <p className="hero-description" ref={descRef}>

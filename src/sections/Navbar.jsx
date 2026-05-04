@@ -77,7 +77,7 @@ const Navbar = () => {
     <section className="navbar-section" ref={navRef}>
       <div className="container nav-container">
         <div className="nav-brand">
-          <img src={NuseaFont} alt="Nusantara Aether" className="nav-logo-font" />
+          <img src={NuseaFont} alt="Nusantara Eather" className="nav-logo-font" />
         </div>
 
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
