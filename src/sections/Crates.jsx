@@ -6,42 +6,70 @@ const crateData = [
   {
     name: "Vote Crate",
     stars: "Common",
-    // Icon: Green Shulker Box
     icon: "https://minecraft.wiki/images/Invicon_Lime_Shulker_Box.png",
-    color: "#7ed6df", // Ijo Mint/Light
-    items: ["Common Tools", "Iron Ingots", "Golden Apples", "Vote Keys"]
+    color: "#59ff4f",
+    items: [
+      "Vote Armor",
+      "Tools",
+      "Golden Apples",
+      "Vote Keys"
+    ]
   },
+
   {
     name: "Crimson Crate",
     stars: "Legendary",
-    // Icon: Red Shulker Box
     icon: "https://minecraft.wiki/images/Invicon_Red_Shulker_Box.png",
-    color: "#cf1212", // Merah
-    items: ["Netherite Scraps", "Power IV Bow", "Crimson Armor", "Spawner Fragments"]
+    color: "#ff2e2e",
+    items: [
+      "Crimson Armor",
+      "Tools",
+      "Netherite Scraps",
+      "Custom Enchant Book",
+      "Spawner Fragment"
+    ]
   },
-    {
+
+  {
     name: "Nusea Crate",
     stars: "Special",
-    // Icon: Orange Shulker Box
     icon: "https://minecraft.wiki/images/Invicon_Orange_Shulker_Box.png",
-    color: "#e67e22", // Oren
-    items: ["Diamond Gear", "Enchanted Books", "XP Bottles", "Exclusive Tags"]
+    color: "#ffb347",
+    items: [
+      "Nusea Armor",
+      "Tools",
+      "XP Bottles",
+      "Exclusive Tags",
+      "Custom Enchant Book"
+    ]
   },
+
   {
     name: "Nebula Crate",
     stars: "Rare",
-    // Icon: Light Blue Shulker Box
     icon: "https://minecraft.wiki/images/Invicon_Light_Blue_Shulker_Box.png",
-    color: "#3498db", // Biru Light
-    items: ["Elytra", "Nebula Wings", "Sharpness V Book", "Ultimate Key"]
+    color: "#5bc0ff",
+    items: [
+      "Nebula Armor",
+      "Tools",
+      "Elytra",
+      "Nebula Wings",
+      "Custom Enchant Book"
+    ]
   },
+
   {
     name: "Poker Crate",
     stars: "Epic",
-    // Icon: Purple Shulker Box
     icon: "https://minecraft.wiki/images/Invicon_Purple_Shulker_Box.png",
-    color: "#9b59b6", // Ungu
-    items: ["Jackpot Coins", "Casino Access", "Dice Particles", "Gambler Title"]
+    color: "#b84dff",
+    items: [
+      "Poker Armor",
+      "Tools",
+      "Jackpot Coins",
+      "Dice Particles",
+      "Custom Enchant Book"
+    ]
   }
 ];
 

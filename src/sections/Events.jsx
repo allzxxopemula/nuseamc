@@ -5,9 +5,9 @@ const Events = () => {
 const eventData = [
     {
       title: "PVP Tournament",
-      status: "Upcoming",
-      date: "May ??, 2026",
-      desc: "1v1 arena battle. Win the legendary Champion's Sword!",
+      status: "Ended",
+      date: "May 8, 2026",
+      desc: "PVP Battle: Winner Takes All! Win the Sword, Walk Away with the Cash.",
       icon: "https://minecraft.wiki/images/Diamond_Sword_JE3_BE3.png",
       color: "#ff4d4d"
     },

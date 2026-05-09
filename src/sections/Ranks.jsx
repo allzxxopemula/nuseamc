@@ -53,7 +53,7 @@ const rankData = [
       "Vault 0/3",
       "Shop discount 2%",
       "Unlock previous rank features",
-      "Unlock /repair, /heal, /enderchest"
+      "Unlock /repair, /heal, /enderchest, /fly"
     ]
   },
   {
@@ -71,7 +71,7 @@ const rankData = [
       "Shop discount 5%",
       "Unlock previous rank features",
       "Unlock /repair (Enchanted Item)",
-      "Unlock /nick, /pweather, /ptime"
+      "Unlock /nick, /pweather, /ptime, /fly"
     ]
   },
   {
@@ -88,7 +88,7 @@ const rankData = [
       "Vault 0/5",
       "Shop discount 10%",
       "Unlock previous rank features",
-      "Unlock /hat, /skull"
+      "Unlock /hat, /skull, /fly"
     ]
   }
 ];
@@ -149,51 +149,61 @@ const rankData = [
       </div>
 
       {/* --- MODAL OVERLAY --- */}
-      {isModalOpen && (
-        <div className="modal-overlay-rank" onClick={handleCloseModal}>
-          <div className="modal-overlay-rank-container" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-overlay-rank-grid">
-              
-              {/* Bagian Kiri: QR Code */}
-              <div className="modal-overlay-rank-qr-section">
-                <div className="qr-wrapper">
-                  {/* Pake API QR Code public sebagai contoh, bisa diganti gambar qris lu sendiri */}
-                  <img src={QrisImage} alt="QRIS Payment" className="qr-image" />
-                </div>
-                <p className="qr-text">Scan QRIS untuk membayar</p>
-              </div>
+{isModalOpen && (
+  <div className="modal-overlay-rank" onClick={handleCloseModal}>
+    <div className="modal-overlay-rank-container" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-overlay-rank-grid">
+        
+        {/* Left Side: QR Code */}
+        <div className="modal-overlay-rank-qr-section">
+          <div className="qr-wrapper">
+            <img src={QrisImage} alt="QRIS Payment" className="qr-image" />
+          </div>
+          <p className="qr-text">Scan the QRIS code to pay</p>
+        </div>
 
-              {/* Bagian Kanan: Info Pembelian */}
-              <div className="modal-overlay-rank-info-section">
-                <h3 className="modal-overlay-rank-title">Konfirmasi Pembelian</h3>
-                
-                <div className="modal-overlay-rank-summary">
-                  <p>Anda akan membeli rank:</p>
-                  <h2 style={{ color: selectedRank?.color }}>{selectedRank?.name}</h2>
-                  <p className="modal-overlay-rank-price">Total Tagihan: <span>Rp {selectedRank?.price}</span></p>
-                </div>
+        {/* Right Side: Purchase Info */}
+        <div className="modal-overlay-rank-info-section">
+          <h3 className="modal-overlay-rank-title">Purchase Confirmation</h3>
+          
+          <div className="modal-overlay-rank-summary">
+            <p>You are purchasing the rank:</p>
+            <h2 style={{ color: selectedRank?.color }}>{selectedRank?.name}</h2>
+            <p className="modal-overlay-rank-price">
+              Total Payment: <span>Rp {selectedRank?.price}</span>
+            </p>
+          </div>
 
-                <p className="modal-overlay-rank-instruction">
-                  Silakan lakukan pembayaran sesuai nominal yang tertera menggunakan QR code di samping (atau di atas) kirim bukti foto pembayaran melalui wa dengan klik tombol Lanjutkan Konfirmasi.
-                </p>
+          <p className="modal-overlay-rank-instruction">
+            Please complete the payment using the QR code on the left (or above), then send the payment proof photo through WhatsApp by clicking the Continue Confirmation button.
+          </p>
 
-                <div className="modal-overlay-rank-security-note">
-                  <i>🔒</i>
-                  <p>Setelah pembayaran dilakukan, transaksi akan melalui proses verifikasi oleh admin sebelum pesanan diproses.</p>
-                </div>
+          <div className="modal-overlay-rank-security-note">
+            <i>🔒</i>
+            <p>
+              After the payment is completed, your transaction will be reviewed by the admin before your order is processed.
+            </p>
+          </div>
 
-                <div className="modal-overlay-rank-actions">
-                  <button className="btn-cancel" onClick={handleCloseModal}>Batal</button>
-                  <button className="btn-proceed" onClick={handleProceed} style={{ backgroundColor: selectedRank?.color || '#111' }}>
-                    Lanjutkan Konfirmasi
-                  </button>
-                </div>
-              </div>
+          <div className="modal-overlay-rank-actions">
+            <button className="btn-cancel" onClick={handleCloseModal}>
+              Cancel
+            </button>
 
-            </div>
+            <button
+              className="btn-proceed"
+              onClick={handleProceed}
+              style={{ backgroundColor: selectedRank?.color || '#111' }}
+            >
+              Continue Confirmation
+            </button>
           </div>
         </div>
-      )}
+
+      </div>
+    </div>
+  </div>
+)}
     </section>
   );
 };

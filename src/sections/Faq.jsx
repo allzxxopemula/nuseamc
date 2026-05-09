@@ -8,7 +8,7 @@ const Faq = () => {
     setOpenId(openId === id ? null : id);
   };
 
-  const faqData = [
+const faqData = [
     {
       id: 1,
       question: "Is the server optimized for low-end PCs?",
@@ -17,7 +17,7 @@ const Faq = () => {
     {
       id: 2,
       question: "How does the Land Claim system work?",
-      answer: "To prevent griefing, you can protect your builds using a Golden Shovel. Simply right-click two corners of your area to create a claim. Type /claim in-game for a full tutorial.",
+      answer: "We use RedProtect for land security. To claim your area, simply surround your building with any type of Fence (pagar) and place a Sign (papan tanda) on one of the fence posts. The system will automatically protect everything inside the perimeter.",
     },
     {
       id: 3,
