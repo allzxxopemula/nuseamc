@@ -14,7 +14,7 @@ const socialLinks = [
     {
       name: "WhatsApp",
       icon: <FaWhatsapp />,
-      link: "https://chat.whatsapp.com/JDRlDYx8HXoKAXnZFlbdPW",
+      link: "https://chat.whatsapp.com/EcWdA8dgXZP2cUQgjiDzQX",
       color: "#25D366",
       desc: "Get instant updates"
     },

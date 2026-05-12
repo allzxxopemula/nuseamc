@@ -36,7 +36,7 @@ const Footer = () => {
               <li><a href="https://discord.gg/-" target="_blank" rel="noreferrer">Discord</a></li>
               <li><a href="https://www.tiktok.com/@aethernusantra.id" target="_blank" rel="noreferrer">TikTok</a></li>
               <li><a href="https://www.instagram.com/nusea.serverminecraft.id?igsh=MWsxZjdleHlsazhxMA==" target="_blank" rel="noreferrer">Instagram</a></li>
-              <li><a href="https://chat.whatsapp.com/JDRlDYx8HXoKAXnZFlbdPW" target="_blank" rel="noreferrer">Whatsapp Group</a></li>
+              <li><a href="https://chat.whatsapp.com/EcWdA8dgXZP2cUQgjiDzQX" target="_blank" rel="noreferrer">Whatsapp Group</a></li>
             </ul>
           </div>
 

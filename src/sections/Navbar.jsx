@@ -90,7 +90,7 @@ const Navbar = () => {
         </ul>
 
         <div className="nav-action">
-          <a href="https://chat.whatsapp.com/JDRlDYx8HXoKAXnZFlbdPW" className="btn-play-with-us">
+          <a href="https://chat.whatsapp.com/EcWdA8dgXZP2cUQgjiDzQX" className="btn-play-with-us">
             Play with us
           </a>
           <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
