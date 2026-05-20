@@ -34,7 +34,7 @@ const Footer = () => {
             <h4 className="footer-title">Community</h4>
             <ul className="footer-links">
               <li><a href="https://discord.gg/-" target="_blank" rel="noreferrer">Discord</a></li>
-              <li><a href="https://www.tiktok.com/@aethernusantra.id" target="_blank" rel="noreferrer">TikTok</a></li>
+              <li><a href="https://www.tiktok.com/@eathernusantra.id" target="_blank" rel="noreferrer">TikTok</a></li>
               <li><a href="https://www.instagram.com/nusea.serverminecraft.id?igsh=MWsxZjdleHlsazhxMA==" target="_blank" rel="noreferrer">Instagram</a></li>
               <li><a href="https://chat.whatsapp.com/EcWdA8dgXZP2cUQgjiDzQX" target="_blank" rel="noreferrer">Whatsapp Group</a></li>
             </ul>

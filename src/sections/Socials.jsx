@@ -28,7 +28,7 @@ const socialLinks = [
     {
       name: "TikTok", // SUDAH DIGANTI
       icon: <FaTiktok />, // JANGAN LUPA IMPORT INI BANG
-      link: "https://www.tiktok.com/@aethernusantra.id", // Ganti sama link tiktok lu bang
+      link: "https://www.tiktok.com/@eathernusantra.id", // Ganti sama link tiktok lu bang
       color: "#000000",
       desc: "Watch epic short clips"
     }
